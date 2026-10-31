@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="xSu — everyday fashion, thoughtfully chosen.">
+<title>xSu — Wear Your Way</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#171717;--muted:#777;--paper:#faf9f6;--accent:#bd684d;--line:#e9e5df;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}button,input,select{font:inherit}button{cursor:pointer}
+.announcement{background:#171717;color:#fff;text-align:center;padding:9px 12px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+header{height:76px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;background:#faf9f6eF;position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.logo{font-family:"Playfair Display",serif;font-size:34px;font-weight:700;letter-spacing:-2px;text-decoration:none;color:var(--ink)}.logo span{color:var(--accent)}
+nav{display:flex;gap:27px}nav a{font-size:12px;text-decoration:none;color:var(--ink);letter-spacing:1px;text-transform:uppercase}
+.header-actions{display:flex;gap:18px;align-items:center}.iconbtn{border:0;background:none;font-size:13px;color:var(--ink)}#cartCount{background:var(--accent);color:#fff;border-radius:50%;padding:2px 6px;font-size:10px;margin-left:3px}
+.hero{margin:22px auto 70px;width:88%;min-height:510px;border-radius:5px;overflow:hidden;position:relative;background:#c8b9a7 url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=2000&q=85') center 38%/cover;display:flex;align-items:center}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#171717a8,transparent 78%)}
+.hero-copy{position:relative;color:white;padding:7%;max-width:570px}.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase}.hero h1{font:700 clamp(45px,6vw,76px)/1.02 "Playfair Display",serif;margin:18px 0}.hero p{font-size:14px;line-height:1.8;max-width:360px;color:#f1eee9}.btn{border:1px solid var(--ink);background:var(--ink);color:#fff;padding:14px 23px;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;display:inline-block;text-decoration:none}.btn.light{background:#fff;color:#171717;border-color:#fff;margin-top:18px}
+.section{width:88%;margin:0 auto 78px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.section h2{font:600 37px "Playfair Display",serif;margin:0}.section-head p{color:var(--muted);font-size:12px;margin:8px 0 0}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0 26px}.filter{background:transparent;border:1px solid var(--line);padding:9px 16px;border-radius:30px;font-size:11px}.filter.active{background:var(--ink);color:white;border-color:var(--ink)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.product{min-width:0}.photo{position:relative;background:#eee;aspect-ratio:3/4;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.product:hover .photo img{transform:scale(1.04)}.tag{position:absolute;top:12px;left:12px;background:#fff;padding:6px 9px;font-size:9px;letter-spacing:1px;text-transform:uppercase}.add{position:absolute;bottom:12px;left:12px;right:12px;border:0;background:#fff;padding:12px;font-size:10px;letter-spacing:1px;text-transform:uppercase}.product h3{font-size:13px;font-weight:500;margin:13px 0 5px}.price{font-size:13px;font-weight:700}.old{color:#999;text-decoration:line-through;font-weight:400;margin-left:7px}
+.story{background:#eee9e1;padding:65px 8%;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.story img{width:100%;height:350px;object-fit:cover}.story h2{font:600 40px "Playfair Display",serif;margin:12px 0}.story p{font-size:13px;line-height:1.9;color:#666}
+.perks{width:88%;margin:55px auto;display:grid;grid-template-columns:repeat(3,1fr);gap:15px;text-align:center}.perk{padding:22px;border:1px solid var(--line)}.perk b{font-size:12px;letter-spacing:1px;text-transform:uppercase}.perk p{font-size:11px;color:var(--muted)}
+footer{background:#171717;color:white;padding:48px 6vw;display:flex;justify-content:space-between;gap:30px;align-items:start}footer .logo{color:white}footer p{font-size:11px;color:#bbb;line-height:1.8}footer a{color:white}
+.overlay{position:fixed;inset:0;background:#0007;z-index:9;display:none}.overlay.show{display:block}.drawer{position:absolute;right:0;top:0;height:100%;width:min(470px,100%);background:var(--paper);padding:26px;overflow:auto}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}.drawer h2{font:600 27px "Playfair Display",serif;margin:0}.close{border:0;background:none;font-size:24px}.cart-item{display:flex;gap:14px;padding:17px 0;border-bottom:1px solid var(--line)}.cart-item img{width:78px;height:100px;object-fit:cover}.cart-item p{font-size:12px;margin:4px 0}.qty{display:flex;gap:10px;align-items:center;margin-top:9px}.qty button{border:1px solid var(--line);background:white;width:25px;height:25px}.total{display:flex;justify-content:space-between;font-weight:700;padding:20px 0}
+form{display:grid;gap:11px;margin-top:20px}form label{font-size:10px;text-transform:uppercase;letter-spacing:1px}form input,form select{width:100%;padding:13px;border:1px solid var(--line);background:white;border-radius:0;font-size:13px}.payment-note{background:#f0ebe4;padding:13px;font-size:11px;line-height:1.7;color:#5d5148}.empty{color:var(--muted);font-size:13px;padding:30px 0}
+@media(max-width:850px){nav{display:none}.products{grid-template-columns:repeat(2,1fr);gap:18px}.hero{min-height:440px;width:94%}.section{width:90%}.story{grid-template-columns:1fr;padding:40px 7%}.story img{height:270px}}
+@media(max-width:480px){header{padding:0 5%;height:66px}.logo{font-size:29px}.hero{margin-top:12px;min-height:430px;background-position:58% center}.hero-copy{padding:8%}.section h2{font-size:30px}.products{gap:12px}.product h3{font-size:12px}.perks{grid-template-columns:1fr;width:90%;margin:35px auto}.section{margin-bottom:50px}footer{display:block}footer>div{margin-bottom:20px}}
+</style>
+</head>
+<body>
+<div class="announcement">Complimentary shipping on orders over ₹1,999 · Easy WhatsApp ordering</div>
+<header><a class="logo" href="#">x<span>S</span>u.</a><nav><a href="#shop">Shop</a><a href="#story">Our story</a><a href="#contact">Contact</a></nav><div class="header-actions"><button class="iconbtn" onclick="openCart()">BAG <span id="cartCount">0</span></button></div></header>
+<main>
+<section class="hero"><div class="hero-copy"><div class="eyebrow">The new everyday</div><h1>Wear your<br>own story.</h1><p>Easy silhouettes, thoughtful details and feel-good pieces made for wherever the day takes you.</p><a class="btn light" href="#shop">Explore the collection</a></div></section>
+<section class="section" id="shop"><div class="section-head"><div><div class="eyebrow">Curated for you</div><h2>Fresh arrivals</h2><p>Find your next favourite, right here.</p></div></div><div class="filters" id="filters"><button class="filter active" data-cat="All">All pieces</button><button class="filter" data-cat="Women">Women</button><button class="filter" data-cat="Men">Men</button><button class="filter" data-cat="Accessories">Accessories</button></div><div class="products" id="products"></div></section>
+<section class="story" id="story"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1100&q=85" alt="Fashion editorial"><div><div class="eyebrow">A little about xSu</div><h2>Style that feels like you.</h2><p>xSu is about making everyday dressing feel special. Explore versatile pieces, effortless fits and a little something for every version of you.</p><a class="btn" href="#shop">Shop the edit</a></div></section>
+<div class="perks"><div class="perk"><b>Made for everyday</b><p>Easy-to-style wardrobe favourites</p></div><div class="perk"><b>Simple ordering</b><p>Place your order on WhatsApp</p></div><div class="perk"><b>Pay your way</b><p>UPI or Cash on Delivery</p></div></div>
+</main>
+<footer id="contact"><div><a class="logo" href="#">x<span>S</span>u.</a><p>Wear your own story.<br>Everyday fashion, thoughtfully chosen.</p></div><div><b>GET IN TOUCH</b><p>Questions about sizing or orders?<br><a id="footerWhatsApp" href="#" target="_blank">Chat with us on WhatsApp</a><br><span id="footerEmail">Add your store email</span></p></div><div><b>QUICK LINKS</b><p><a href="#shop">Shop collection</a><br><a href="#story">Our story</a></p></div></footer>
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()"><aside class="drawer"><div class="drawer-head"><h2>Your bag</h2><button class="close" onclick="closeCart()">×</button></div><div id="cartItems"></div><div class="total"><span>Total</span><span id="total">₹0</span></div><div class="payment-note">Choose UPI or Cash on Delivery at checkout. UPI payment is confirmed manually by the store before dispatch.</div>
+<form id="checkout"><label>Your name<input id="customerName" required placeholder="Full name"></label><label>Mobile number<input id="customerPhone" required inputmode="tel" placeholder="10-digit mobile number"></label><label>Delivery address<input id="customerAddress" required placeholder="House no., street, city, PIN"></label><label>Payment method<select id="payment"><option>UPI</option><option>Cash on Delivery</option></select></label><button class="btn" type="submit">Place order on WhatsApp</button></form>
+</aside></div>
+<script>
+// STORE SETUP: replace these two values before publishing.
+const WHATSAPP_NUMBER = "91XXXXXXXXXX"; // Country code + number, digits only. Example: 919876543210
+const UPI_ID = "YOUR-UPI-ID@bank";      // Your business UPI ID (shown in the order message)
+const STORE_EMAIL = "hello@xsu.in";     // Replace with your store email
+
+const products = [
+{id:1,name:"Everyday Linen Shirt",cat:"Women",price:1299,old:1599,tag:"Bestseller",img:"https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=700&q=85"},
+{id:2,name:"Relaxed Fit Overshirt",cat:"Men",price:1499,old:1799,tag:"New",img:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=85"},
+{id:3,name:"Minimal Everyday Tote",cat:"Accessories",price:699,old:899,tag:"Easy favourite",img:"https://images.unsplash.com/photo-1590878228720-2a6f5f8a6c5e?auto=format&fit=crop&w=700&q=85"},
+{id:4,name:"Classic Streetwear Tee",cat:"Men",price:799,old:999,tag:"New",img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=85"},
+{id:5,name:"Soft Knit Co-ord",cat:"Women",price:1899,old:2299,tag:"Just in",img:"https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=700&q=85"},
+{id:6,name:"Everyday Denim",cat:"Men",price:1599,old:1899,tag:"Essential",img:"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=85"},
+{id:7,name:"Sculpted Shoulder Bag",cat:"Accessories",price:999,old:1299,tag:"Popular",img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=85"},
+{id:8,name:"Weekend Cotton Dress",cat:"Women",price:1699,old:1999,tag:"New",img:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=85"}
+];
+let cart=[];
+const money=n=>"₹"+n.toLocaleString("en-IN");
+function renderProducts(cat="All"){document.getElementById("products").innerHTML=products.filter(p=>cat==="All"||p.cat===cat).map(p=>`<article class="product"><div class="photo"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="tag">${p.tag}</span><button class="add" onclick="add(${p.id})">Add to bag +</button></div><h3>${p.name}</h3><div class="price">${money(p.price)} <span class="old">${money(p.old)}</span></div></article>`).join("");}
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderProducts(b.dataset.cat)}));
+function add(id){let p=cart.find(x=>x.id===id);p?p.qty++:cart.push({...products.find(x=>x.id===id),qty:1});renderCart();openCart()}
+function change(id,d){let p=cart.find(x=>x.id===id);if(p){p.qty+=d;if(p.qty<1)cart=cart.filter(x=>x.id!==id)}renderCart()}
+function renderCart(){document.getElementById("cartCount").textContent=cart.reduce((a,p)=>a+p.qty,0);document.getElementById("cartItems").innerHTML=cart.length?cart.map(p=>`<div class="cart-item"><img src="${p.img}" alt=""><div style="flex:1"><b style="font-size:12px">${p.name}</b><p>${money(p.price)}</p><div class="qty"><button onclick="change(${p.id},-1)">−</button>${p.qty}<button onclick="change(${p.id},1)">+</button></div></div></div>`).join(""):'<p class="empty">Your bag is waiting for something lovely.</p>';document.getElementById("total").textContent=money(cart.reduce((a,p)=>a+p.price*p.qty,0))}
+function openCart(){document.getElementById("overlay").classList.add("show")}function closeCart(){document.getElementById("overlay").classList.remove("show")}
+document.getElementById("checkout").addEventListener("submit",e=>{e.preventDefault();if(!cart.length){alert("Your bag is empty.");return}const name=document.getElementById("customerName").value.trim(),phone=document.getElementById("customerPhone").value.trim(),address=document.getElementById("customerAddress").value.trim(),payment=document.getElementById("payment").value;const lines=cart.map(p=>`${p.name} x ${p.qty} — ${money(p.price*p.qty)}`).join("\n");const total=cart.reduce((a,p)=>a+p.price*p.qty,0);const msg=`Hello xSu! I'd like to place an order.\n\n${lines}\n\nTotal: ${money(total)}\nPayment: ${payment}${payment==="UPI"?`\nUPI ID: ${UPI_ID}`:""}\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nPlease confirm availability and delivery details.`;if(WHATSAPP_NUMBER.includes("X")){alert("Before taking orders, add your WhatsApp number in the STORE SETUP section of index.html.");return}window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank")});
+document.getElementById("footerWhatsApp").href="https://wa.me/"+WHATSAPP_NUMBER;document.getElementById("footerEmail").textContent=STORE_EMAIL;
+renderProducts();renderCart();
+</script>
+</body></html>
